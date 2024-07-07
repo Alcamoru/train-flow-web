@@ -1,0 +1,31 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="fr-fr">
+<head>
+    {% block header %}
+
+    {% endblock %}
+</head>
+
+<body>
+<header>
+    <div class="menu">
+        <ul>
+            <li><a href="{% url 'index' %}">Trainflow</a></li>
+            <li><a href="{% url 'signup' %}">Rejoindre</a></li>
+            <li><a href="{% url 'engagement' %}">Notre engagement</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="{% url 'login' %}">Connexion</a></li>
+        </ul>
+    </div>
+</header>
+{% block content %}
+
+{% endblock %}
+
+<footer>
+</footer>
+
+</body>

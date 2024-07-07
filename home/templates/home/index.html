@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+    <meta charset="UTF-8">
+    <title>Trainflow</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<main>
+    <div class="inner-div-1">
+        <div class="img-carousel">
+            <div class="img-carousel-inner">
+                <div class="img-carousel-item active">
+                    <img src="{% static 'media/running-woman.jpeg' %}" alt="Image 1">
+                </div>
+                <div class="img-carousel-item">
+                    <img src="{% static 'media/pro-cyclist.jpeg' %}" alt="Image 1">
+                </div>
+                <div class="img-carousel-item">
+                    <img src="{% static 'media/athlete-musculation.jpeg' %}" alt="Image 1">
+
+                </div>
+            </div>
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+
+        </div>
+    </div>
+    <div class="descriptions">
+        <p id="desc1" class="description">Notre travail: <strong>simplifier le votre</strong>. Ici, coachs et athletes peuvent échanger et s'entrainer de manière optimale</p>
+        <p id="desc2" class="description">Trainflow met à votre disposition tout une palette d'outils pour entrainer vos athletes, ou pour vous entrainer</p>
+        <p id="desc3" class="description">Coachs, entraineurs, staffs, et surtout sportifs, <strong>bienvenue</strong>. Ceci est le début d'une nouvelle aventure.</p>
+    </div>
+
+</main>
+<script src="{% static 'js/index.js' %}"></script>
+
+{% endblock %}
