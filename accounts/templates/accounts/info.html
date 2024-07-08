@@ -1,0 +1,42 @@
+{% extends base_template %}
+{% load static %}
+
+{% block header %}
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/members.css' %}">
+{% endblock %}
+{% block content %}
+<main class="user-infos">
+    <h1 class="page-title">Informations</h1>
+    <div>
+            <p>Nom d'utilisateur</p>
+            <p class="info">{{ user.username }}</p>
+        </div>
+        {% if user.first_name %}
+            <div>
+                <p>Prénom</p>
+                <p class="info">{{ user.first_name }}</p>
+            </div>
+        {% endif %}
+        {% if user.last_name %}
+            <div>
+                <p>Nom</p>
+                <p class="info">{{ user.last_name }}</p>
+            </div>
+        {% endif %}
+        {% if user.email %}
+            <div>
+                <p>Email</p>
+                <p class="info">{{ user.email }}</p>
+            </div>
+        {% endif %}
+        {% if user.birth %}
+            <div>
+                <p>Date de naissance</p>
+                <p class="info">{{ user.birth }}</p>
+            </div>
+        {% endif %}
+
+<button><a href="{% url 'logout' %}">Se déconnecter</a></button>
+</main>
+{% endblock %}

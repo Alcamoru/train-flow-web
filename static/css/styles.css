@@ -26,7 +26,7 @@
     margin: 15px;
 }
 
-.menu ul li a {
+.menu-link {
     font-size: 1.2rem;
     color: white;
     text-decoration: none;
@@ -34,7 +34,7 @@
     position: relative;
 }
 
-.menu ul li a::after {
+.menu-link::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -47,7 +47,7 @@
     transition: transform 0.25s ease-out;
 }
 
-.menu ul li a:hover::after {
+.menu-link:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
@@ -56,11 +56,20 @@
     margin-right: auto; /* Push the first item to the left */
 }
 
-.menu ul li:nth-child(2) {
+.join {
+    font-size: 1.2rem;
+    padding: 1rem;
+    border-radius: 15px;
+    background-color: #FEFAE0;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
+.join a {
+    text-decoration: none;
+    color: #283618;
+}
+
 
 main {
     background-color: #FEFAE0;
@@ -161,4 +170,8 @@ h2 {
 p {
     margin: 2rem;
     text-align: center;
+}
+
+img {
+    height: 2rem;
 }

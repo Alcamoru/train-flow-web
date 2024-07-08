@@ -9,13 +9,11 @@ from accounts.models import Member
 MemberModel: Member = get_user_model()
 
 
-# def info(request):
-#     user = request.user
-#     if request.user:
-#         member = MemberModel.objects.get(username=user.username)
-#         return render(request, "members/info.html", context={"holes": user_holes})
-#     else:
-#         return redirect("index")
+def info(request):
+    if request.user:
+        return render(request, "accounts/info.html")
+    else:
+        return redirect("index")
 
 
 def signup(request: HttpRequest):
@@ -39,15 +37,17 @@ def signup(request: HttpRequest):
 
 
 def login_user(request: HttpRequest):
-    if request.method == "POST":
-        username = request.POST.get("username")
-        password = request.POST.get("password")
+    if not request.user.is_authenticated:
+        if request.method == "POST":
+            username = request.POST.get("username")
+            password = request.POST.get("password")
 
-        member = authenticate(username=username, password=password)
-        if member:
-            login(request, member)
-            return redirect("index")
-    return render(request, "accounts/login.html")
+            member = authenticate(username=username, password=password)
+            if member:
+                login(request, member)
+                return redirect("index")
+        return render(request, "accounts/login.html")
+    return redirect("index")
 
 
 def logout_user(request: HttpRequest):
