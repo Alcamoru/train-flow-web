@@ -4,12 +4,13 @@
 {% block header %}
     <title>Title</title>
     <link rel="stylesheet" href="{% static 'css/members.css' %}">
+    <script src="{% static 'js/signup.js' %}"></script>
 
 {% endblock %}
 {% block content %}
 
 <main>
-    <form method="post" class="signup-form">
+    <form id="signup-form" method="post" class="signup-form">
         {% csrf_token %}
         <div class="form-step active presentation">
             <h2>Bienvenue sur Trainflow</h2>
@@ -73,6 +74,5 @@
             <button class="submit" type="submit">S'inscrire</button>
         </div>
     </form>
-    <script src="{% static 'js/signup.js' %}"></script>
 </main>
 {% endblock %}

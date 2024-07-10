@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function handleKeyPress(event) {
+        console.log("pressed")
         if (event.key === 'Enter') {
             event.preventDefault(); // Prevent form submission
             if (currentStep < steps.length - 1) {
@@ -43,6 +44,5 @@ document.addEventListener('DOMContentLoaded', function() {
             showStep(currentStep);
         });
     });
-    document.getElementById('signup-form').addEventListener('keypress', handleKeyPress);
-
+    document.getElementById('signup-form').addEventListener('keydown', handleKeyPress);
 });

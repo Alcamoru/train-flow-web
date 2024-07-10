@@ -53,3 +53,14 @@ def login_user(request: HttpRequest):
 def logout_user(request: HttpRequest):
     logout(request)
     return redirect("index")
+
+
+def switch_profile(request: HttpRequest):
+    member: Member = request.user
+    if member.coach_selected:
+        member.coach_selected = False
+        member.save()
+    else:
+        member.coach_selected = True
+        member.save()
+    return redirect("index")

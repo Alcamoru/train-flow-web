@@ -16,9 +16,7 @@
         <ul>
             <li><a class="menu-link" href="{% url 'index' %}">Trainflow</a></li>
              <li><a class="menu-link" href="{% url 'info' %}">{{ user.first_name }}</a></li>
-            {% if user.is_coach %}
-                <li><a class="menu-link" href="{% url 'switch-profile' %}">Passer au profil athlete</a></li>
-            {% endif %}
+             <li><a class="menu-link" href="{% url 'switch-profile' %}">Passer au profil coach</a></li>
         </ul>
     </div>
 </header>
