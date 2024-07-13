@@ -1,0 +1,26 @@
+{% extends base_template %}
+{% load static %}
+
+{% block header %}
+    <title>Trainflow</title>
+    <link rel="stylesheet" href="{% static 'css/members.css' %}">
+
+{% endblock %}
+
+{% block content %}
+    <main>
+        <h1>Quel est votre profil ?</h1>
+        <div class="profile-choice">
+            <a class="athlete-profile" href="">
+                <h1>Athlète</h1>
+                <h2>compte gratuit</h2>
+                <p>Vous êtes un athlète, et vous avez un coach ou cherchez un coach</p>
+            </a>
+            <a class="coach-profile" href="">
+                <h1>Entraineur</h1>
+                <p>Vous êtes un entraineur. Profitez de nos services pour seulement 15 euros par mois</p>
+            </a>
+
+        </div>
+    </main>
+{% endblock %}

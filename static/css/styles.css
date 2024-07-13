@@ -66,6 +66,7 @@
     left: 50%;
     transform: translateX(-50%);
 }
+
 .join a {
     text-decoration: none;
     color: white;
@@ -85,6 +86,7 @@
 .trainflow-presentation h1 {
     margin: 3rem 0 10rem 0;
 }
+
 .trainflow-presentation h2 {
     margin: 3rem 0 30% 0;
 }
@@ -95,7 +97,7 @@ main {
     grid-template-columns: 1fr 1fr;
 }
 
-main .inner-div-1{
+main .inner-div-1 {
     grid-column: 1;
     display: flex;
     align-items: center;

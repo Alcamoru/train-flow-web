@@ -9,19 +9,22 @@
 
 {% block content %}
 
-<main class="">
-    <form class="login-form" method="post">
-        {% csrf_token %}
+    <main class="">
         <h1 class="page-title">Se connecter</h1>
-        <div>
-            <label for="username">Nom d'utilisateur</label>
-            <input type="text" id="username" name="username">
-        </div>
-        <div>
-            <label for="password">Mot de passe</label>
-            <input type="password" id="password" name="password">
-        </div>
-        <button type="submit">Connexion</button>
-    </form>
-</main>
- {% endblock %}
+        <form class="login-form" method="post">
+            {% csrf_token %}
+            <div class="form-step">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="form-step">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div class="submit">
+                <button class="submit-button" type="submit">Connexion</button>
+
+            </div>
+        </form>
+    </main>
+{% endblock %}

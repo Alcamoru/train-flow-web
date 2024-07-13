@@ -9,70 +9,42 @@
 {% endblock %}
 {% block content %}
 
-<main>
-    <form id="signup-form" method="post" class="signup-form">
-        {% csrf_token %}
-        <div class="form-step active presentation">
-            <h2>Bienvenue sur Trainflow</h2>
-            <h3>Avant de commencer, dites nous qui vous êtes</h3>
-            <p>Les informations que vous nous fournissez sont strictement confidentielles.</p>
-            <p>Nous ne vendons pas vos données et ne les utilisons pas à des fins commerciales.</p>
-            <p>Vous pouvez les modifier à tout moment.</p>
-            <button type="button" class="next-btn">Commencer</button>
+    <main>
+        <div class="welcome-panel">
+            <h1>Bienvenue sur Trainflow</h1>
+            <h2>Avant de commencer, dites nous qui vous êtes</h2>
+            <p>Nous ne partageons pas vos information avec des tiers, ne les commercialisons pas,
+                et n’utilisons pas vos informations à des fins commerciales.</p>
         </div>
-        <div class="form-step">
-            <button type="button" class="prev-btn">Précédent</button>
-
-            <h2>Vous êtes ?</h2>
-            <div class="athlete-or-coach">
-                <div>
-                    <label for="is_athlete">Un athlete</label>
-                    <input type="checkbox" id="is_athlete" name="is_athlete">
+        <form id="signup-form" method="post" class="signup-form">
+            {% csrf_token %}
+            <div>
+                <div class="form-step">
+                    <label for="firstname">prénom</label>
+                    <input type="text" id="firstname" name="firstname">
                 </div>
-                <div>
-                    <label for="is_coach">Un entraineur</label>
-                    <input type="checkbox" id="is_coach" name="is_coach">
+                <div class="form-step">
+                    <label for="lastname">nom</label>
+                    <input type="text" id="lastname" name="lastname">
+                </div>
+                <div class="form-step">
+                    <label for="email">email</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-step">
+                    <label for="password">mot de passe</label>
+                    <input type="password" id="password" name="password">
                 </div>
 
+                <div class="form-step">
+                    <label for="username">nom d'utilisateur</label>
+                    <input type="text" id="username" name="username">
+                </div>
+                <div class="submit">
+                    <button class="submit-button" type="submit">S'inscrire</button>
+
+                </div>
             </div>
-            <button type="button" class="next-btn">Suivant</button>
-        </div>
-        <div class="form-step">
-            <button type="button" class="prev-btn">Précédent</button>
-            <h2>Comment doit-on vous appeler ?</h2>
-            <label for="username"></label>
-            <input type="text" id="username" name="username">
-            <button type="button" class="next-btn">Suivant</button>
-        </div>
-        <div class="form-step">
-            <button type="button" class="prev-btn">Précédent</button>
-            <h2>Ou pouvons-nous vous joindre ?</h2>
-            <label for="email"></label>
-            <input type="email" id="email" name="email">
-            <button type="button" class="next-btn">Suivant</button>
-        </div>
-        <div class="form-step">
-            <button type="button" class="prev-btn">Précédent</button>
-            <h2>Choisissez un mot de passe solide</h2>
-            <label for="password"></label>
-            <input type="password" id="password" name="password">
-            <button type="button" class="next-btn">Suivant</button>
-        </div>
-        <div class="form-step">
-            <button type="button" class="prev-btn">Précédent</button>
-            <label for="firstname">Prénom</label>
-            <input type="text" id="firstname" name="firstname">
-            <label for="lastname">Nom</label>
-            <input type="text" id="lastname" name="lastname">
-            <button type="button" class="next-btn">Suivant</button>
-        </div>
-        <div class="form-step">
-            <button type="button" class="prev-btn">Précédent</button>
-            <h2>Vous êtes né le</h2>
-            <label for="birthdate"></label>
-            <input type="date" id="birthdate" name="birthdate">
-            <button class="submit" type="submit">S'inscrire</button>
-        </div>
-    </form>
-</main>
+        </form>
+    </main>
 {% endblock %}

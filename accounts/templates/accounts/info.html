@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="{% static 'css/members.css' %}">
 {% endblock %}
 {% block content %}
-<main class="user-infos">
-    <h1 class="page-title">Informations</h1>
-    <div>
+    <main class="user-infos">
+        <h1 class="page-title">Informations</h1>
+        <div>
             <p>Nom d'utilisateur</p>
             <p class="info">{{ user.username }}</p>
         </div>
@@ -37,6 +37,6 @@
             </div>
         {% endif %}
 
-<button><a href="{% url 'logout' %}">Se déconnecter</a></button>
-</main>
+        <button><a href="{% url 'logout' %}">Se déconnecter</a></button>
+    </main>
 {% endblock %}

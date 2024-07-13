@@ -3,6 +3,7 @@ import datetime
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+
 # Create your models here.
 
 
@@ -11,3 +12,4 @@ class Member(AbstractUser):
     is_athlete = models.BooleanField(default=True, null=True, blank=True)
     is_coach = models.BooleanField(default=False, null=True, blank=True)
     coach_selected = models.BooleanField(default=False, null=True, blank=True)
+    athlete_profile_completed = models.BooleanField(default=False, null=False, blank=True)
