@@ -1,13 +1,14 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Outfit', sans-serif;
 }
 
 
 .menu {
-    padding: 1.5rem;
-    background-color: #283618;
+    font-weight: bold;
+    padding: 2rem;
+    background-color: #17C3B2;
     text-align: center;
     display: flex;
     align-items: center;
@@ -27,7 +28,7 @@
 }
 
 .menu-link {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: white;
     text-decoration: none;
     display: inline-block;
@@ -57,25 +58,41 @@
 }
 
 .join {
-    font-size: 1.2rem;
-    padding: 1rem;
+    padding: 1.5rem;
+    font-size: 1.5rem;
     border-radius: 15px;
-    background-color: #FEFAE0;
+    background-color: #227C9D;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
 .join a {
     text-decoration: none;
-    color: #283618;
+    color: white;
 }
 
+.trainflow-presentation {
+    height: 80%;
+    font-size: 2.2rem;
+    background-image: url("../media/triathlete.jpg");
+    background-size: cover;
+    grid-column: span 2;
+    color: white;
+    text-align: center;
+    padding: 4rem;
+}
+
+.trainflow-presentation h1 {
+    margin: 3rem 0 10rem 0;
+}
+.trainflow-presentation h2 {
+    margin: 3rem 0 30% 0;
+}
 
 main {
-    background-color: #FEFAE0;
+    background-color: #FEF9EF;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 2rem;
 }
 
 main .inner-div-1{
@@ -145,8 +162,9 @@ main .inner-div-1{
 }
 
 .description {
+    font-weight: bold;
     cursor: pointer;
-    margin-bottom: 1rem;
+    margin-bottom: 20%;
     font-size: 2rem;
     color: grey;
 }

@@ -12,3 +12,12 @@ def coach(request):
     if member.is_authenticated:
         if member.is_coach:
             return render(request, "coach.html")
+        return render(request, "become_coach.html")
+    return render(request, "become_coach.html")
+
+
+def calendar(request):
+    member: Member = request.user
+    if member.is_authenticated:
+        if member.is_coach:
+            return render(request, "calendar.html")
