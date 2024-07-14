@@ -12,8 +12,11 @@ MemberModel: Member = get_user_model()
 def info(request):
     member: Member = request.user
     if member:
-        if not member.athlete_profile_completed:
-            pass
+        if not member.is_athlete and member.is_coach:
+            return render(request, 'accounts/info.html', {'member': member})
+        if member.is_athlete and not member.athlete_profile_completed:
+            context = {"athlete_profile": "not completed"}
+            return render(request, "accounts/info.html", context)
         return render(request, "accounts/info.html")
     else:
         return redirect("index")
@@ -30,7 +33,7 @@ def signup(request: HttpRequest):
             member = Member.objects.create_user(username=username, password=password, first_name=first_name,
                                                 last_name=last_name, email=email)
             login(request, member)
-            return redirect("athlete-signup")
+            return redirect("profile-signup")
 
     return render(request, "accounts/signup.html")
 
@@ -67,3 +70,7 @@ def switch_profile(request: HttpRequest):
 
 def profile_signup(request: HttpRequest):
     return render(request, "accounts/profile_signup.html")
+
+
+def athlete_signup(request: HttpRequest):
+    return render(request, "accounts/athlete_signup.html")
