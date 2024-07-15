@@ -133,12 +133,21 @@ a {
 }
 
 .athlete-signup-step.active {
+    flex-direction: column;
     font-size: 1.5rem;
     font-weight: bold;
     margin: 1rem;
     width: 30vw;
     display: flex;
     justify-content: space-between;
+}
+
+.athlete-form-step {
+    display: none;
+}
+.athlete-form-step.active {
+    display: flex;
+    flex-direction: column;
 }
 
 .gender-selection {
@@ -167,4 +176,9 @@ input[type="radio"]:checked + .option {
     gap: 10px;
     margin: 20px;
 }
-
+.signup-step {
+    color: gray;
+}
+.signup-step.active-step {
+    color: white;
+}

@@ -1,5 +1,6 @@
 let currentStep = 0;
 const steps = document.querySelectorAll(".athlete-form-step");
+const titles = document.querySelectorAll(".signup-step");
 
 document.addEventListener("DOMContentLoaded", () => {
     showStep(currentStep);
@@ -7,8 +8,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function showStep(step) {
     steps.forEach((s, index) => {
-        s.style.display = index === step ? "block" : "none";
+        if (index === currentStep) {
+            s.classList.add('active');
+        }
+        else {
+            s.classList.remove('active');
+        }
     });
+    titles.forEach((title, index) => {
+        title.classList.remove("active-step")
+    })
+    titles.forEach((title, index) => {
+        if (index === currentStep) {
+            title.classList.add("active-step");
+        }
+    })
 }
 
 function nextStep() {
