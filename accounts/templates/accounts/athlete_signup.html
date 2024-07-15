@@ -9,6 +9,86 @@
 
 {% block content %}
     <main>
-    <h1>Complétez votre profil d'athlete</h1>
+        <h1>Complétez votre profil d'athlete</h1>
+        <div class="athlete-signup-steps">
+            <h2>1. santé</h2>
+            <h2>2. performance</h2>
+            <h2>3. options</h2>
+        </div>
+        <div>
+            <form method="post" id="athlete-signup-form">
+                <div class="athlete-form-step">
+                    <button type="button" onclick="prevStep()">Previous</button>
+                    <button type="button" onclick="nextStep()">Next</button>
+                    <div>
+                        <label for="birthdate">date de naissance</label>
+                        <input type="date" id="birthdate" name="birthdate" required>
+                    </div>
+                    <div class="gender-selection">
+                        <p>sexe</p>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male" class="option">femme</label>
+
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female" class="option">homme</label>
+                    </div>
+                    <div class="rating-selection">
+                        <p>indice de santé</p>
+                        <input type="radio" id="rate1" name="health" value="1">
+                        <label for="rate1" class="option">1</label>
+
+                        <input type="radio" id="rate2" name="health" value="2">
+                        <label for="rate2" class="option">2</label>
+
+                        <input type="radio" id="rate3" name="health" value="3">
+                        <label for="rate3" class="option">3</label>
+
+                        <input type="radio" id="rate4" name="health" value="4">
+                        <label for="rate4" class="option">4</label>
+
+                        <input type="radio" id="rate5" name="health" value="5">
+                        <label for="rate5" class="option">5</label>
+
+                        <input type="radio" id="rate6" name="health" value="6">
+                        <label for="rate6" class="option">6</label>
+
+                        <input type="radio" id="rate7" name="health" value="7">
+                        <label for="rate7" class="option">7</label>
+
+                        <input type="radio" id="rate8" name="health" value="8">
+                        <label for="rate8" class="option">8</label>
+
+                        <input type="radio" id="rate9" name="health" value="9">
+                        <label for="rate9" class="option">9</label>
+
+                        <input type="radio" id="rate10" name="health" value="10">
+                        <label for="rate10" class="option">10</label>
+                    </div>
+                    <div>
+                        <label for="weight">poids actuel</label>
+                        <input type="number" id="weight" name="weight" required>
+                    </div>
+                    <div>
+                        <label for="weight">poids actuel</label>
+                        <input type="number" id="weight" name="weight" required>
+                    </div>
+                </div>
+                <div class="athlete-form-step">
+                    <button type="button" onclick="prevStep()">Previous</button>
+                    <label for="sports">sports</label>
+                    <input type="text" id="sports" name="sports" required>
+                    <button type="button" onclick="nextStep()">Next</button>
+                </div>
+                <div class="athlete-form-step">
+                    <button type="button" onclick="prevStep()">Previous</button>
+
+                    <label for="units">Units</label>
+                    <input type="text" id="units" name="units" required>
+                    <button type="button" onclick="nextStep()">Next</button>
+                </div>
+
+            </form>
+        </div>
     </main>
+    <script src="{% static 'js/athlete-form.js' %}"></script>
 {% endblock %}
