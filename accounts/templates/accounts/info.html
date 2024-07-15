@@ -36,13 +36,13 @@
                 <p class="info">{{ user.birth }}</p>
             </div>
         {% endif %}
-    {% if not member.is_athlete and not member.is_coach %}
-        <a href="{% url 'profile-signup' %}">Choisissez votre solution</a>
+        {% if not member.is_athlete and not member.is_coach %}
+            <a href="{% url 'profile-signup' %}">Choisissez votre solution</a>
 
-    {% endif %}
-    {% if not athlete_profile %}
-        <a href="{% url 'athlete-signup' %}">Compléter votre profil d'athlète</a>
-    {% endif %}
+        {% endif %}
+        {% if not athlete_profile %}
+            <a href="{% url 'athlete-signup' %}">Compléter votre profil d'athlète</a>
+        {% endif %}
 
         <button><a href="{% url 'logout' %}">Se déconnecter</a></button>
     </main>
