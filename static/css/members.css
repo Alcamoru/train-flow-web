@@ -1,15 +1,11 @@
+/* Multi-files styles */
+
 main {
     background-color: #FEF9EF;
     padding: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-}
-
-.welcome-panel {
-    display: flex;
-    align-items: center;
     flex-direction: column;
 }
 
@@ -25,8 +21,34 @@ h2 {
     font-size: 2rem;
 }
 
-.signup-form {
-    margin: 3rem 0 1rem 0;
+input {
+    font-size: 1.5rem;
+    color: white;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input[type="radio"] {
+    display: none; /* Hide the radio buttons */
+}
+
+input[type="radio"]:checked + .option {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Login styles */
+
+.login-form {
+    margin: 3rem;
     color: white;
     padding: 3rem;
     background-color: #17C3B2;
@@ -40,16 +62,6 @@ h2 {
     width: 30vw;
     display: flex;
     justify-content: space-between;
-}
-
-input {
-    font-size: 1.5rem;
-    color: white;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid white;
-    box-sizing: border-box;
-    transition: border-color 0.3s;
 }
 
 .submit-button {
@@ -70,23 +82,36 @@ input {
     justify-content: center;
 }
 
-.login-form {
-    margin: 3rem;
+/* Signup form */
+
+.signup-welcome-panel {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.signup-form {
+    margin: 3rem 0 1rem 0;
     color: white;
     padding: 3rem;
     background-color: #17C3B2;
     border-radius: 15px;
 }
 
+.form-step {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem;
+    width: 30vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Profile signup styles */
+
 .profile-choice {
     display: flex;
     align-items: center;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-
 }
 
 .athlete-profile, .coach-profile {
@@ -107,6 +132,7 @@ a {
     font-size: 1.2rem;
 }
 
+/* Athlete signup styles */
 
 .athlete-signup-steps {
     display: flex;
@@ -115,7 +141,14 @@ a {
     background-color: #17C3B2;
     width: 60%;
     padding: 1rem 4rem;
-    border-radius: 15px;
+    border-radius: 35px;
+    color: white;
+}
+
+.signup-step {
+    color: gray;
+}
+.signup-step.active-step {
     color: white;
 }
 
@@ -126,20 +159,6 @@ a {
     padding: 3rem;
     background-color: #17C3B2;
     border-radius: 15px;
-}
-
-.athlete-signup-step {
-    display: none;
-}
-
-.athlete-signup-step.active {
-    flex-direction: column;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 1rem;
-    width: 30vw;
-    display: flex;
-    justify-content: space-between;
 }
 
 .athlete-form-step {
@@ -162,23 +181,19 @@ a {
     transition: text-decoration 0.3s;
 }
 
-input[type="radio"] {
-    display: none; /* Hide the radio buttons */
-}
-
-input[type="radio"]:checked + .option {
-    text-decoration: underline;
-    font-weight: bold;
-}
-
 .rating-selection {
     display: flex;
     gap: 10px;
     margin: 20px;
 }
-.signup-step {
-    color: gray;
-}
-.signup-step.active-step {
+
+.prev-button {
     color: white;
+    font-size: 1em;
+    background: none;
+    text-align: left;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
 }

@@ -18,8 +18,6 @@
         <div>
             <form method="post" id="athlete-signup-form">
                 <div class="athlete-form-step active">
-                    <button type="button" onclick="prevStep()">Previous</button>
-                    <button type="button" onclick="nextStep()">Next</button>
                     <div>
                         <label for="birthdate">date de naissance</label>
                         <input type="date" id="birthdate" name="birthdate" required>
@@ -72,16 +70,16 @@
                         <label for="weight">poids actuel</label>
                         <input type="number" id="weight" name="weight" required>
                     </div>
+                    <button type="button" onclick="nextStep()">Suivant</button>
                 </div>
                 <div class="athlete-form-step">
-                    <button type="button" onclick="prevStep()">Previous</button>
+                    <button class="prev-button" type="button" onclick="prevStep()">précédent</button>
                     <label for="sports">sports</label>
                     <input type="text" id="sports" name="sports" required>
                     <button type="button" onclick="nextStep()">Next</button>
                 </div>
                 <div class="athlete-form-step">
-                    <button type="button" onclick="prevStep()">Previous</button>
-
+                    <button class="prev-button" type="button" onclick="prevStep()">précédent</button>
                     <label for="units">Units</label>
                     <input type="text" id="units" name="units" required>
                     <button type="button" onclick="nextStep()">Next</button>

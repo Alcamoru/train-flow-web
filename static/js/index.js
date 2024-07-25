@@ -7,7 +7,7 @@ function showSlide(index) {
     if (index >= slides.length) currentIndex = 0;
     if (index < 0) currentIndex = slides.length - 1;
     const offset = -currentIndex * 100;
-    document.querySelector('.img-carousel-inner').style.transform = `translateX(${offset}%)`;
+    document.querySelector('.img-carousel').style.transform = `translateX(${offset}%)`;
 
     slides.forEach((slide, i) => {
         if (i === currentIndex) {

@@ -73,4 +73,7 @@ def profile_signup(request: HttpRequest):
 
 
 def athlete_signup(request: HttpRequest):
+    member: Member = request.user
+    if member.athlete_profile_completed:
+        return redirect("accounts/profile-signup")
     return render(request, "accounts/athlete_signup.html")

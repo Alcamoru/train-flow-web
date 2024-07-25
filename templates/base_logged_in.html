@@ -19,7 +19,7 @@
             <li><a class="menu-link" href="{% url 'index' %}">calendrier</a></li>
             <li><a class="menu-link" href="{% url 'index' %}">flux</a></li>
             <li><a class="menu-link" href="{% url 'index' %}">progression</a></li>
-            <li><a class="menu-link" href="{% url 'info' %}">{{ user.first_name }}</a></li>
+            <li><a class="menu-link" href="{% url 'info' %}">{{ user.username }}</a></li>
             {% if user.is_coach %}
                 <li><a class="menu-link" href="{% url 'switch-profile' %}">Passer au profil coach</a></li>
             {% endif %}
