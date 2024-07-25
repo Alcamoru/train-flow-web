@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function showStep(step) {
     steps.forEach((s, index) => {
-        if (index === currentStep) {
+        if (index === step) {
             s.classList.add('active');
         }
         else {
@@ -19,7 +19,7 @@ function showStep(step) {
         title.classList.remove("active-step")
     })
     titles.forEach((title, index) => {
-        if (index === currentStep) {
+        if (index === step) {
             title.classList.add("active-step");
         }
     })

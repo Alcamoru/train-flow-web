@@ -146,6 +146,7 @@ a {
 }
 
 .signup-step {
+    cursor: pointer;
     color: gray;
 }
 .signup-step.active-step {
@@ -196,4 +197,41 @@ a {
     text-decoration: underline;
     cursor: pointer;
     padding: 0;
+}
+
+/* Info styles */
+
+.user-infos {
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #17C3B2;
+    padding: 2rem;
+    width: 50%;
+    border-radius: 20px;
+}
+
+.user-infos div {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logout-button {
+    cursor: pointer;
+    margin-top: 2rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: #227C9D;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.finish-profile {
+    margin: 1rem;
+    font-size: 1.5rem;
+    text-decoration: underline;
 }
