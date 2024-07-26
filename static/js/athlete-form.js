@@ -10,8 +10,7 @@ function showStep(step) {
     steps.forEach((s, index) => {
         if (index === step) {
             s.classList.add('active');
-        }
-        else {
+        } else {
             s.classList.remove('active');
         }
     });

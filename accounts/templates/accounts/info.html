@@ -7,44 +7,44 @@
 {% endblock %}
 {% block content %}
     <main>
-    <div class="user-infos">
-        <h1 class="page-title">Informations</h1>
-        <div>
-            <p>Nom d'utilisateur</p>
-            <p class="info">{{ user.username }}</p>
-        </div>
-        {% if user.first_name %}
+        <div class="user-infos">
+            <h1 class="page-title">Informations</h1>
             <div>
-                <p>Prénom</p>
-                <p class="info">{{ user.first_name }}</p>
+                <p>Nom d'utilisateur</p>
+                <p class="info">{{ user.username }}</p>
             </div>
-        {% endif %}
-        {% if user.last_name %}
-            <div>
-                <p>Nom</p>
-                <p class="info">{{ user.last_name }}</p>
-            </div>
-        {% endif %}
-        {% if user.email %}
-            <div>
-                <p>Email</p>
-                <p class="info">{{ user.email }}</p>
-            </div>
-        {% endif %}
-        {% if user.birth %}
-            <div>
-                <p>Date de naissance</p>
-                <p class="info">{{ user.birth }}</p>
-            </div>
-        {% endif %}
+            {% if user.first_name %}
+                <div>
+                    <p>Prénom</p>
+                    <p class="info">{{ user.first_name }}</p>
+                </div>
+            {% endif %}
+            {% if user.last_name %}
+                <div>
+                    <p>Nom</p>
+                    <p class="info">{{ user.last_name }}</p>
+                </div>
+            {% endif %}
+            {% if user.email %}
+                <div>
+                    <p>Email</p>
+                    <p class="info">{{ user.email }}</p>
+                </div>
+            {% endif %}
+            {% if user.birth %}
+                <div>
+                    <p>Date de naissance</p>
+                    <p class="info">{{ user.birth }}</p>
+                </div>
+            {% endif %}
 
-        {% if not member.is_athlete and not member.is_coach %}
-            <a class="finish-profile" href="{% url 'profile-signup' %}">Choisissez votre solution</a>
-        {% endif %}
-        {% if not athlete_profile %}
-            <a class="finish-profile" href="{% url 'athlete-signup' %}">Compléter votre profil d'athlète</a>
-        {% endif %}
-        <button class="logout-button"><a href="{% url 'logout' %}">Se déconnecter</a></button>
-    </div>
+            {% if not member.is_athlete and not member.is_coach %}
+                <a class="finish-profile" href="{% url 'profile-signup' %}">Choisissez votre solution</a>
+            {% endif %}
+            {% if not athlete_profile %}
+                <a class="finish-profile" href="{% url 'athlete-signup' %}">Compléter votre profil d'athlète</a>
+            {% endif %}
+            <button class="logout-button"><a href="{% url 'logout' %}">Se déconnecter</a></button>
+        </div>
     </main>
 {% endblock %}

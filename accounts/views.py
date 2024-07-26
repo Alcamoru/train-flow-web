@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model, login, authenticate, logout
 from django.http import HttpRequest
 from django.shortcuts import render, redirect
 
+from accounts.forms import AthleteSignupForm
 from accounts.models import Member
 
 # Create your views here.
@@ -76,4 +77,13 @@ def athlete_signup(request: HttpRequest):
     member: Member = request.user
     if member.athlete_profile_completed:
         return redirect("accounts/profile-signup")
-    return render(request, "accounts/athlete_signup.html")
+    if request.method == "POST":
+        form = AthleteSignupForm(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data["health"])
+        else:
+            print("caca")
+            return render(request, "accounts/athlete_signup.html", {"form": form})
+    else:
+        form = AthleteSignupForm()
+    return render(request, "accounts/athlete_signup.html", {"form": form})

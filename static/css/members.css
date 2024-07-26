@@ -149,6 +149,7 @@ a {
     cursor: pointer;
     color: gray;
 }
+
 .signup-step.active-step {
     color: white;
 }
@@ -165,27 +166,22 @@ a {
 .athlete-form-step {
     display: none;
 }
+
 .athlete-form-step.active {
     display: flex;
     flex-direction: column;
 }
 
-.gender-selection {
+.athlete-form-step.active div {
     display: flex;
-    gap: 20px;
-    margin: 20px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
 }
+
 
 .option {
     cursor: pointer;
-    padding: 5px;
-    transition: text-decoration 0.3s;
-}
-
-.rating-selection {
-    display: flex;
-    gap: 10px;
-    margin: 20px;
 }
 
 .prev-button {

@@ -16,73 +16,74 @@
             <h2 onclick="showStep(2)" class="signup-step">3. options</h2>
         </div>
         <div>
-            <form method="post" id="athlete-signup-form">
+            <form method="post" id="athlete-signup-form" class="athlete-signup-form">
+                {% csrf_token %}
                 <div class="athlete-form-step active">
                     <div>
-                        <label for="birthdate">date de naissance</label>
-                        <input type="date" id="birthdate" name="birthdate" required>
+                        {{ form.birthdate.label_tag }}
+                        {{ form.birthdate }}
                     </div>
-                    <div class="gender-selection">
-                        <p>sexe</p>
+                    <div>
+                        {{ form.gender.label_tag }}
                         <input type="radio" id="male" name="gender" value="male">
                         <label for="male" class="option">femme</label>
 
                         <input type="radio" id="female" name="gender" value="female">
                         <label for="female" class="option">homme</label>
                     </div>
-                    <div class="rating-selection">
-                        <p>indice de santé</p>
-                        <input type="radio" id="rate1" name="health" value="1">
+                    <div>
+                        {{ form.health.label_tag }}
+                        <input type="radio" id="rate1" name="indice de santé" value="1">
                         <label for="rate1" class="option">1</label>
 
-                        <input type="radio" id="rate2" name="health" value="2">
+                        <input type="radio" id="rate2" name="indice de santé" value="2">
                         <label for="rate2" class="option">2</label>
 
-                        <input type="radio" id="rate3" name="health" value="3">
+                        <input type="radio" id="rate3" name="indice de santé" value="3">
                         <label for="rate3" class="option">3</label>
 
-                        <input type="radio" id="rate4" name="health" value="4">
+                        <input type="radio" id="rate4" name="indice de santé" value="4">
                         <label for="rate4" class="option">4</label>
 
-                        <input type="radio" id="rate5" name="health" value="5">
+                        <input type="radio" id="rate5" name="indice de santé" value="5">
                         <label for="rate5" class="option">5</label>
 
-                        <input type="radio" id="rate6" name="health" value="6">
+                        <input type="radio" id="rate6" name="indice de santé" value="6">
                         <label for="rate6" class="option">6</label>
 
-                        <input type="radio" id="rate7" name="health" value="7">
+                        <input type="radio" id="rate7" name="indice de santé" value="7">
                         <label for="rate7" class="option">7</label>
 
-                        <input type="radio" id="rate8" name="health" value="8">
+                        <input type="radio" id="rate8" name="indice de santé" value="8">
                         <label for="rate8" class="option">8</label>
 
-                        <input type="radio" id="rate9" name="health" value="9">
+                        <input type="radio" id="rate9" name="indice de santé" value="9">
                         <label for="rate9" class="option">9</label>
 
-                        <input type="radio" id="rate10" name="health" value="10">
+                        <input type="radio" id="rate10" name="indice de santé" value="10">
                         <label for="rate10" class="option">10</label>
                     </div>
                     <div>
                         <label for="weight">poids actuel</label>
-                        <input type="number" id="weight" name="weight" required>
+                        <input type="number" id="weight" name="weight">
                     </div>
                     <div>
-                        <label for="weight">poids actuel</label>
-                        <input type="number" id="weight" name="weight" required>
+                        <label for="height">taille actuelle</label>
+                        <input type="number" id="height" name="height">
                     </div>
                     <button type="button" onclick="nextStep()">Suivant</button>
                 </div>
                 <div class="athlete-form-step">
                     <button class="prev-button" type="button" onclick="prevStep()">précédent</button>
                     <label for="sports">sports</label>
-                    <input type="text" id="sports" name="sports" required>
+                    <input type="text" id="sports" name="sports">
                     <button type="button" onclick="nextStep()">Next</button>
                 </div>
                 <div class="athlete-form-step">
                     <button class="prev-button" type="button" onclick="prevStep()">précédent</button>
                     <label for="units">Units</label>
-                    <input type="text" id="units" name="units" required>
-                    <button type="button" onclick="nextStep()">Next</button>
+                    <input type="text" id="units" name="units">
+                    <button class="submit-button" type="submit">S'inscrire</button>
                 </div>
 
             </form>
